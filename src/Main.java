@@ -20,18 +20,24 @@ public class Main {
                 Files.createFile(dataFile);
             }
 
-//            Contacts list
-//            Writes default contacts to contacts.txt
+//            TODO Contacts list
+//            TODO Writes default contacts to contacts.txt, use when list is empty
 //            List<String> contactList = new ArrayList<>();
 //            contactList.add("Jack | 555-555-5555");
 //            contactList.add("Jill | 666-666-6666");
 //            contactList.add("Mary | 777-777-7777");
 //            contactList.add("Bill | 888-888-8888");
 //            contactList.add("Ben | 999-999-9999");
+//            contactList.add("Dave | 123-123-1234");
+//            contactList.add("Carl | 321-321-4321");
+//            contactList.add("Joan | 343-343-3434");
+//            contactList.add("Jessie | 656-656-6565");
+//            contactList.add("Brad | 789-789-7890");
 //            if (Files.exists(dataFile)) {
 //                Files.write(dataFile, contactList);
 //                System.out.println(contactList);
 //            }
+
         } catch (IOException iox) {
             iox.printStackTrace();
         }
