@@ -20,8 +20,8 @@ public class Main {
                 Files.createFile(dataFile);
             }
 
-            // Contacts list
-            // Writes default contacts to contacts.txt
+//            Contacts list
+//            Writes default contacts to contacts.txt
 //            List<String> contactList = new ArrayList<>();
 //            contactList.add("Jack | 555-555-5555");
 //            contactList.add("Jill | 666-666-6666");
@@ -37,11 +37,9 @@ public class Main {
         }
 
         Scanner scanner = new Scanner(System.in);
-
         while (true) {
             System.out.println("Please choose an action: ");
             System.out.println("""
-
                     1. View contacts.
                     2. Add a new contact.
                     3. Search a contact by name.
@@ -54,7 +52,6 @@ public class Main {
                 System.out.println("Thank you, have a nice day!");
                 break;
             }
-
             switch (userChoice) {
                 case "1":
                     retrieveContacts();
@@ -123,12 +120,18 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter the name of the contact you wish to remove.");
             String name = scanner.nextLine();
+            String lineToRemove = null;
             for (String contact : contactList) {
                 String contactCheck = contact.toLowerCase();
                 if (contactCheck.contains(name.toLowerCase())) {
-                    contactList.remove(contact);
+                    lineToRemove = contact;
                     System.out.println(contact + " removed.");
                 }
+            }
+            if (lineToRemove != null) {
+                contactList.remove(lineToRemove);
+            } else {
+                System.out.println("Contact not found.");
             }
             Files.write(Paths.get("contacts.txt"), contactList);
         } catch (IOException iox) {
